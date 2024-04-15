@@ -10,25 +10,39 @@
 
 
 
-// document.querySelector('button').addEventListener;('click', () =>{})
-
-// fetch('https://dev.io-academy.uk/resources/bond.php')
-//     .then((response) => {
-//         return response.json()
-//     }).then((data) => {
-//         document.querySelector('.output').innerHTML = '<h1>${data.name}</h1><p>${data.release_date}</p>'
+// document.querySelector('button').addEventListener('click', () => {
+//   fetch('https://dev.io-academy.uk/resources/bond.php')
+//       .then((response) => {
+//           return response.json()
+//       })
+//       .then((data) => {
+//           console.log(data)
+//       })
 // })
 
-document.querySelector('button').addEventListener('click', () =>{
-    fetch('https://dev.io-academy.uk/resources/bond.php')
-      .then(response => {
-        return response.json()
+
+// document.querySelector('button').addEventListener('click', () => {
+
+//     fetch('bondtask.json')
+//       .then(response => {
+//         return response.json()
+//       }).then((data) => {
+//         document.querySelector('.output').innerHTML =`<div>${data.name}</div>`
+//       })
+//     })
+
+
+      fetch('doggies.json')
+        .then(response => {
+          return response.json()
+        }).then((data) => {
+          data.name.forEach((item) => {
+          document.querySelector('.output').innerHTML += `<div>${data.bred_for}</div>`
+        })
       })
-      .then(data => {
-        document.querySelector('.output').innerHTML = `<h1>${data.name}</h1><p>Height${data.release_date}</p>`
-      })
-  })
+      
   
+  // https://dev.io-academy.uk/resources/bond.php
 
 
     //         document.querySelector('.output').innerHTML = `
